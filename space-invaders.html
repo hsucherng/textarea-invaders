@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Textarea Invaders</title>
+<style>
+	body { 
+		background-color: #111;
+		color: #ddd; 
+		overflow: hidden;
+	}
+	textarea {
+		overflow: hidden;
+	}
+	#gameCanvas {
+		margin: 0 0 0 -415px; 
+		padding: 10px 0 10px 10px;
+		background-color: #333; 
+		color: #ddd; 
+		border: 0; 
+		outline: 0; 
+		position: absolute;
+		top: 10px;
+		left: 50%; 
+		resize: none;
+		cursor: default;
+	}
+	.hidden {
+		display: none;
+	}
+</style>
+</head>
+<body>
+
+<!--	In Firefox, the values inside input/textareas are retained even after a page refresh.
+		autocomplete="off" is used to stop this from happening.		-->
+
+<textarea id="gameCanvas" readonly="readonly" cols="105" rows="43" autocomplete="off">
+
+
+      ##########################################################################################
+      #                                                                                        #
+      #       *******   ******  *     *  *******   *****     *****     ******   *****          #
+      #          *     *         *   *      *     *     *   *     *   *        *     *         #
+      #          *     *******     *        *     *******   *****     *******  *******         #
+      #          *     *         *   *      *     *     *   *    *    *        *     *         #
+      #          *      ******  *     *     *     *     *   *     *    ******  *     *         #
+      #                                                                                        #
+      #                                                                                        #
+      #         *******  *     *  *     *   *****   ******    ******   *****    ******         #
+      #            *     **    *  *     *  *     *  *     *  *        *     *  *               #
+      #            *     * **  *   *   *   *******  *     *  *******  *****     *****          #
+      #            *     *   * *    * *    *     *  *     *  *        *    *         *         #
+      #         *******  *    **     *     *     *  ******    ******  *     *  ******          #
+      #                                                                                        #
+      ##########################################################################################
+      
+      
+                                           Press ENTER to play
+                                          
+
+
+
+                                        ========================
+                                                CONTROLS
+                                        ========================
+										
+                                       SPACE        -    Shoot
+                                       ARROW KEYS   -    Move
+                                       SHIFT        -    Move quicker
+</textarea>
+
+<textarea id="gameOver" class="hidden">
+      ##########################################################################################
+      #                                                                                        #
+      #                                                                                        #
+      #       ******   *****   *     *   ******        *****   *     *   ******   *****        #
+      #      *        *     *  **   **  *             *     *  *     *  *        *     *       #
+      #      *   ***  *******  *  *  *  *******       *     *   *   *   *******  *****         #
+      #      *     *  *     *  *     *  *             *     *    * *    *        *    *        #
+      #       *****   *     *  *     *   ******        *****      *      ******  *     *       #
+      #                                                                                        #
+      #                                                                                        #
+      ##########################################################################################
+</textarea>
+
+<audio id="SFXplayerShoot" preload>
+	<source src="sounds/shoot.mp3" />
+	<source src="sounds/shoot.ogg" />
+	Your browser does not support audio tag. Why not <a href="http://browsehappy.com" target="_blank">get a modern browser here</a>?
+</audio>
+
+<audio id="SFXplayerHit" preload>
+	<source src="sounds/player-hit.mp3" />
+	<source src="sounds/player-hit.ogg" />
+</audio>
+
+<audio id="SFXalienHit" preload>
+	<source src="sounds/alien-hit.mp3" />
+	<source src="sounds/alien-hit.ogg" />
+</audio>
+
+<audio id="SFXbonusShip" preload>
+	<source src="sounds/bonus-ship.mp3" />
+	<source src="sounds/bonus-ship.ogg" />
+</audio>
+
+<audio id="SFXbonusHit" preload>
+	<source src="sounds/bonus-hit.mp3" />
+	<source src="sounds/bonus-hit.ogg" />
+</audio>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendors/jquery-1.7.2.min.js"><\/script>')</script>
+<script src="js/space-invaders.js"></script>
+</body>
+</html>
